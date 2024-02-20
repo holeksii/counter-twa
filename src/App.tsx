@@ -3,6 +3,7 @@ import "@twa-dev/sdk";
 import { TonConnectButton } from "@tonconnect/ui-react";
 import { useTonConnect } from "./hooks/useTonConnect";
 import { useCounterContract } from "./hooks/useCounterContract";
+import { Helmet } from "react-helmet";
 
 function App() {
   const { connected } = useTonConnect();
@@ -10,6 +11,10 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+      </Helmet>
+
       <div className="Container">
         <TonConnectButton />
 
